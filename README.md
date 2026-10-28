@@ -30,14 +30,14 @@
 
 ## 실행 환경
 
-| 항목                  | 사용 버전                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------- |
-| 운영체제              | Windows (빌드 10.0.26300), PowerShell 7.6.9                                               |
-| 프론트 런타임 Node.js | v24.21.0                                                                                  |
-| 백엔드 런타임         | Node.js v24.21.0                                                                          |
-| 프레임워크            | React 19.3.0, Vite 8.3.4, Express 5.3.0, jsonwebtoken 9.0.3, dotenv 18.0.7, sql.js 1.14.2 |
-| 데이터 저장           | SQLite (sql.js, 파일 `backend-express/data/board.sqlite`)                                 |
-| 확인한 브라우저       | Chrome 156                                                                                |
+| 항목 | 사용 버전 |
+|---|---|
+| 운영체제 | Windows (빌드 10.0.26300), PowerShell 7.6.9 |
+| 프론트 런타임 Node.js | v24.21.0 |
+| 백엔드 런타임 | Node.js v24.21.0 |
+| 프레임워크 | React 19.3.0, Vite 8.3.4, Express 5.3.0, jsonwebtoken 9.0.3, dotenv 18.0.7, sql.js 1.14.2 |
+| 데이터 저장 | SQLite (sql.js, 파일 `backend-express/data/board.sqlite`) |
+| 확인한 브라우저 | Chrome 156 |
 
 ## 설치와 실행
 
@@ -90,10 +90,10 @@ npm run preview
 
 ### 4 테스트 계정과 DB
 
-| 사용자 | 이메일           | 실습용 비밀번호 |
-| ------ | ---------------- | --------------- |
-| Alice  | alice@class.test | Classroom!2026  |
-| Bob    | bob@class.test   | Classroom!2026  |
+| 사용자 | 이메일 | 실습용 비밀번호 |
+|---|---|---|
+| Alice | alice@class.test | Classroom!2026 |
+| Bob | bob@class.test | Classroom!2026 |
 
 - SQLite 파일은 서버를 처음 켤 때 `backend-express/data/board.sqlite`로 자동 생성됩니다.
 - DB 초기화: 백엔드 서버를 끈 뒤 `backend-express/data/board.sqlite` 파일만 삭제하고 다시 실행합니다. 기존 글이 지워집니다.
@@ -103,15 +103,15 @@ npm run preview
 
 ## 구현 완료 범위
 
-| 기능                       | 완료 여부 | 주요 파일 또는 함수                                                                  |
-| -------------------------- | --------- | ------------------------------------------------------------------------------------ |
-| 공개 목록과 상세           | 완료      | `backend-express/src/app.js`, `frontend-react/src/api.js` (`api.list`, `api.detail`) |
-| 로그인과 JWT 발급          | 완료      | `backend-express/src/auth.js` `issueToken`, `frontend-react/src/api.js` `login`      |
-| JWT 검증과 내 정보 조회    | 완료      | `backend-express/src/auth.js` `currentUserId`, `api.me`                              |
-| 글 작성과 작성자 저장      | 완료      | `app.js` 글 등록 라우트가 `currentUserId`로 작성자를 정함                            |
-| 본인 글 수정·삭제          | 완료      | `auth.js` `assertOwner`, `api.js` `canEdit`                                          |
-| 토큰 만료와 로그아웃       | 완료      | `api.js` `request`(401이면 로그인 상태 해제), 로그아웃 버튼                          |
-| 입력 오류와 권한 오류 처리 | 완료      | `app.js` 입력 검사, `api.js`의 오류 문구                                             |
+| 기능 | 완료 여부 | 주요 파일 또는 함수 |
+|---|---|---|
+| 공개 목록과 상세 | 완료 | `backend-express/src/app.js`, `frontend-react/src/api.js` (`api.list`, `api.detail`) |
+| 로그인과 JWT 발급 | 완료 | `backend-express/src/auth.js` `issueToken`, `frontend-react/src/api.js` `login` |
+| JWT 검증과 내 정보 조회 | 완료 | `backend-express/src/auth.js` `currentUserId`, `api.me` |
+| 글 작성과 작성자 저장 | 완료 | `app.js` 글 등록 라우트가 `currentUserId`로 작성자를 정함 |
+| 본인 글 수정·삭제 | 완료 | `auth.js` `assertOwner`, `api.js` `canEdit` |
+| 토큰 만료와 로그아웃 | 완료 | `api.js` `request`(401이면 로그인 상태 해제), 로그아웃 버튼 |
+| 입력 오류와 권한 오류 처리 | 완료 | `app.js` 입력 검사, `api.js`의 오류 문구 |
 
 알려진 문제와 미완성 기능: 없음. 로그인 상태(토큰)는 브라우저 메모리에만 두기 때문에 새로고침하면 사라집니다(과제 요구 사항).
 
@@ -145,10 +145,10 @@ npm run preview
 
 ## 제출 확인
 
-- [ ] README의 안내 문구를 실제 내용으로 교체했다.
-- [ ] 새 폴더에 clone하여 README만으로 설치·환경설정·빌드·로컬 실행했다.
+- [x] README의 안내 문구를 실제 내용으로 교체했다.
+- [x] 새 폴더에 clone하여 README만으로 설치·환경설정·빌드·로컬 실행했다.
 - [x] 4173번 빌드 화면에서 API 연결과 주요 기능을 확인했다.
 - [ ] GitHub에서 보고서와 증거 링크가 열린다.
-- [ ] 교수자가 저장소를 열람·복제할 수 있다.
-- [ ] 비밀 키·실제 토큰·DB·node_modules·.venv·target을 커밋하지 않았다.
+- [x] 교수자가 저장소를 열람·복제할 수 있다.
+- [x] 비밀 키·실제 토큰·DB·node_modules·.venv·target을 커밋하지 않았다.
 - [ ] 최종 push 후 저장소 URL과 제출 기준 커밋 SHA를 LMS에 제출했다.
